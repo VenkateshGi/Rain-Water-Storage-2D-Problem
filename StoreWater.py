@@ -53,15 +53,9 @@ def WaterStoredInPlatform(platform):
             visit_nodes = np.zeros(platform.shape)
             #print("checking for after 0 :",i,"--",j,"--",platform[i][j])
             base(i,j,platform,platform[i][j],visit_nodes,i,j,deciders)
-    #print("*******-------",deciders)
-    #exit(1)
-    #print("EXECUTED")
-    #print("visit_nodes________",visit_nodes)
-    #print("VISITED ASAL NODES)))))))))", deciders)
+
     waterStorage = 0
-    #canStoreWater = checkSides(platform)
-    #print("canStoreWater : \n,",canStoreWater)
-    #print(" platform :\n", platform)
+
     canStoreWater = deciders
 
     #print ("final platform :\n",platform)
@@ -76,8 +70,3 @@ def WaterStoredInPlatform(platform):
         canStoreWater = checkSides(platform)
         #print("canStoreWater : \n",canStoreWater)
     return waterStorage
-
-
-#print ("Final Storage : \n",WaterStoredInPlatform(np.array([[3,3,3,4,3],[3,0,2,1,3],[3,1,13,3,3]])))
-#print ("Final Storage : ",WaterStoredInPlatform(np.array([[3,3,3,3,5,3],[3,0,2,3,1,3],[3,1,2,3,1,3],[3,3,3,1,3,3]])))
-#print ("Final Storage : ",WaterStoredInPlatform(np.array([[1,5,4,5,4,4,4,4],[2,1,3,5,3,3,3,3],[1,3,2,5,2,0,2,3],[2,0,4,5,4,3,3,1],[5,5,5,5,5,5,5,5]])))
