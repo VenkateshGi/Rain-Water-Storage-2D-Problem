@@ -43,7 +43,6 @@ def base(i,j,platform,value,visit_nodes,fixed_x,fixed_y,deciders):
         if (platform[i][j-1] <= value) and (not visit_nodes[i][j-1]):
             base(i,j-1,platform,value,visit_nodes,fixed_x,fixed_y,deciders)
             #print("recursion")
-        #print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 
 def WaterStoredInPlatform(platform):
 
@@ -68,5 +67,4 @@ def WaterStoredInPlatform(platform):
                     waterStorage+=1
         #
         canStoreWater = checkSides(platform)
-        #print("canStoreWater : \n",canStoreWater)
     return waterStorage
