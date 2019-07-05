@@ -24,22 +24,22 @@ def base(i,j,platform,value,visit_nodes,fixed_x,fixed_y,deciders):
 
     else:
         #UP
-        #print("GO UP--","**",i,"**",j,"**","**",value)
+        print("GO UP--","**",i,"**",j,"**","**",value)
         if (platform[i-1][j] <= value) and (not visit_nodes[i-1][j]):
             base(i-1,j,platform,value,visit_nodes,fixed_x,fixed_y,deciders)
             #print("recursion")
         #DOWN
-        #print("GO DOWN--","**",i,"**",j,"**","**",value)
+        print("GO DOWN--","**",i,"**",j,"**","**",value)
         if (platform[i+1][j] <= value) and (not visit_nodes[i+1][j]):
             base(i+1,j,platform,value,visit_nodes,fixed_x,fixed_y,deciders)
             #print("recursion")
         #RIGHT
-        #print("GO RIGHT--","**",i,"**",j,"**","**",value)
+        print("GO RIGHT--","**",i,"**",j,"**","**",value)
         if (platform[i][j+1] <= value) and (not visit_nodes[i][j+1]):
             base(i,j+1,platform,value,visit_nodes,fixed_x,fixed_y,deciders)
             #print("recursion")
         #LEFT
-        #print("GO LEFT--","**",i,"**",j,"**","**",value)
+        print("GO LEFT--","**",i,"**",j,"**","**",value)
         if (platform[i][j-1] <= value) and (not visit_nodes[i][j-1]):
             base(i,j-1,platform,value,visit_nodes,fixed_x,fixed_y,deciders)
             #print("recursion")
@@ -57,8 +57,8 @@ def WaterStoredInPlatform(platform):
 
     canStoreWater = deciders
 
-    #print ("final platform :\n",platform)
-    #print("Store water : \n",canStoreWater)
+    print ("final platform :\n",platform)
+    print("Store water : \n",canStoreWater)
     while 1 in canStoreWater[1:-1,1:-1]:
         for i in range(1,platform.shape[0]-1):
             for j in range(1,platform.shape[1]-1):
